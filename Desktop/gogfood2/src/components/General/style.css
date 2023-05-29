@@ -17,6 +17,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 10px 50px;
+    font-size: large;
 }
 
 .header__menu {
@@ -44,12 +45,18 @@ header {
 
 }
 
-.d7:after {content:""; clear:both; display:table}
+.d7:after {
+  content:""; 
+  clear:both; 
+  display:table
+}
+
 .d7 form {
   width: auto;
   float: right;
   margin-right: 30px;
 }
+
 .d7 input {
   width: 800px;
   height: 42px;
@@ -60,6 +67,7 @@ header {
   position: relative;
   transition: .3s linear;
 }
+
 .d7 input:focus {
   width: 900px;
 }

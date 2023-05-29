@@ -1,8 +1,8 @@
-import {useState, useEffect, useContext} from "react";
-import {Routes, Route} from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import Ctx from "./context";
 
-import {Header, Footer} from "./components/General";
+import { Header, Footer } from "./components/General";
 import Modal from "./components/Modal";
 import Search from "./components/Search";
 import Draft from "./pages/Draft";
@@ -11,22 +11,25 @@ import Catalog from "./pages/Catalog";
 import Profile from "./pages/Profile";
 import Product from "./pages/Product";
 import Favorites from "./pages/Favorites";
+import Add from "./pages/AddProduct";
 
 const App = () => {
     // let key = "f049fb2d4114429e8653af2ba889a319";
     const [user, setUser] = useState(localStorage.getItem("rockUser"));
     const [token, setToken] = useState(localStorage.getItem("rockToken"));
     const [userId, setUserId] = useState(localStorage.getItem("rockId"));
+    const [text, setText] = useState("");
     const [serverGoods, setServerGoods] = useState([]);
     const [goods, setGoods] = useState(serverGoods);
-    
+
     const [news, setNews] = useState([]);
     useEffect(() => {
-        fetch("https://newsapi.org/v2/everything?apiKey=f049fb2d4114429e8653af2ba889a319&q=cats")
-    .then(res => res.json())
-    .then(data => {
-        console.log(data);
-    })
+        fetch("https://newsapi.org/v2/everything?q=животные&sources=lenta&apiKey=f049fb2d4114429e8653af2ba889a319")
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setNews(data.articles)
+            })
     }, [])
 
     const [modalActive, setModalActive] = useState(false);
@@ -68,7 +71,13 @@ const App = () => {
     return (
         <Ctx.Provider value={{
             goods,
-            setGoods
+            setGoods,
+            setServerGoods,
+            news,
+            text,
+            setText,
+            userId,
+            token
         }}>
             <Header
                 user={user}
@@ -82,6 +91,7 @@ const App = () => {
                     <Route path="/catalog" element={<Catalog
                         setServerGoods={setServerGoods}
                     />} />
+                    <Route path="/add" element={<Add/>}/>
                     <Route path="/draft" element={<Draft />} />
                     <Route path="/profile" element={
                         <Profile user={user} setUser={setUser} color="yellow"
@@ -100,8 +110,8 @@ const App = () => {
                 setActive={setModalActive}
                 setUser={setUser}
             />
-            </Ctx.Provider>
-            )
+        </Ctx.Provider>
+    )
 }
 
-            export default App;
+export default App;

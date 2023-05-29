@@ -1,3 +1,7 @@
+.container {
+	margin-left: 50px;
+}
+
 .banner {
 	background-color: rgb(239, 218, 28);
 	padding-left: 150px;
@@ -85,4 +89,35 @@
 	height: 350px;
 	background-size: contain;
 	background-position: center;
+}
+
+.description {
+	color: black;
+}
+
+.minus {
+	cursor: pointer;
+	width:15px;
+	float:left;
+	text-align:center;
+	
+}
+.plus {
+	cursor: pointer;
+	width:15px;
+	float:right;
+	text-align:center;
+}
+
+.inp_price {
+	width:40px;
+	text-align:center;
+	border:none;
+	border-left:1px solid gray;
+	border-right:1px solid gray;
+}
+
+.count_box {
+	width:70px;
+	border:1px solid gray;  
 }

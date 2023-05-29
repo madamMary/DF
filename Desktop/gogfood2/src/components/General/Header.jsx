@@ -1,6 +1,6 @@
 import Logo from "./Logo";
 import { Link } from "react-router-dom";
-import { Folder2, Star, Cart4, PersonSquare, BoxArrowInRight, SearchHeart } from "react-bootstrap-icons";
+import { Folder2, Star, Cart4, PersonSquare, BoxArrowInRight, SearchHeart, PlusSquare } from "react-bootstrap-icons";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
@@ -23,11 +23,14 @@ const Header = ({ user, setModalActive, serverGoods }) => {
     return <header>
         <Logo />
 
-        <div class="d7">
+        <div className="d7">
             <form><input type="text" placeholder="Поиск" /></form>
         </div>
         <nav className="header__menu">
             {user && <>
+            <Link to="/add" title="Добавить товар" className="badge-el"> 
+            <PlusSquare />
+            </Link>
                 <Link to="/catalog" title="Каталог">
                     <Folder2 />
                 </Link>

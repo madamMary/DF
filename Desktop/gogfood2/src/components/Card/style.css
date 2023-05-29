@@ -15,14 +15,24 @@
     justify-self: center;
 }
 
+.card__img2 {
+    height: 100px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+}
+
 .card__btn {
     border: none;
     outline: none;
     height: 30px;
-    background-color: darkslateblue;
-    color: #fff;
-    border-radius: 4px;
+    background-color: rgb(239, 218, 28);
+    color: #222;
+    border-radius: 50px;
     cursor: pointer;
+    width: 100px;
+    margin: auto;
 }
 
 .card__btn:hover {
@@ -31,20 +41,21 @@
 
 .card__discount {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: pink;
+    top: 20px;
+    left: 60px;
+    background-color: rgb(241, 76, 16);
     padding: 4px;
-    border-radius: 4px;
+    border-radius: 50px;
     display: flex;
     align-items: center;
+    font-size: 15px;
 }
 
 .card__like {
-    color: violet;
+    color: rgb(241, 76, 16);
     position: absolute;
     top: 10px;
     right: 10px;
-    padding: 4px 0px;
+    padding: 20px 60px;
     cursor: pointer;
 }

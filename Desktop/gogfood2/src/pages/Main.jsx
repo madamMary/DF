@@ -1,5 +1,6 @@
 import "./style.css";
 import { CaretRight } from "react-bootstrap-icons";
+import News from "../components/News";
 
 const Main = () => {
     return <>
@@ -25,6 +26,7 @@ const Main = () => {
                 </div>
             </div>
         </div>
+        <News />
     </>
 }
 

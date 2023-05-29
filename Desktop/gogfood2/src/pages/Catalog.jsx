@@ -1,15 +1,26 @@
+import {useState, useContext, useEffect} from "react";
+
 import Card from "../components/Card";
-import {useState, useContext} from "react";
+import Pagination from "../components/Pagination";
+import usePagination from "../hooks/usePagination";
+
 import Ctx from "../context";
 
+
 const Catalog = ({setServerGoods}) => {
-    const {goods} = useContext(Ctx);
+    const {goods, text} = useContext(Ctx);
+    const paginate = usePagination(goods, 20);
     const [sort, setSort] = useState(null);
     const filterSt = {
         gridColumnEnd: "span 4",
         display: "flex",
         gap: "20px"
     }
+
+    useEffect(() => {
+        paginate.step(1);
+    }, [text])
+
     const sortHandler = (vector) => {
         if (vector ===sort) {
             setSort(null)
@@ -23,13 +34,14 @@ const Catalog = ({setServerGoods}) => {
         }
     }
     return <div className="container">
+       <div style={{gridColumnEnd: "span 4"}}><Pagination hk={paginate} /></div>
         <div style={filterSt}>
             <button style={{backgroundColor: sort === "up" ? "orange" : "white"}} onClick={() => sortHandler("up")}>По возрастанию цены</button>
             <button style={{backgroundColor: sort === "down" ? "orange" : "white"}} onClick={() => sortHandler("down")}>По убыванию</button>
             <button>Новинки</button>
             <button>Скидки</button>
         </div>
-    {goods.map(g => <Card key={g._id} {...g} img={g.pictures} setServerGoods={setServerGoods}/>)}
+    {paginate.setDataPerPage().map(g => <Card key={g._id} {...g} img={g.pictures} setServerGoods={setServerGoods}/>)}
     </div>
 }
 

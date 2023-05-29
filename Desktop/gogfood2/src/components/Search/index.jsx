@@ -4,8 +4,7 @@ import Ctx from "../../context";
 import "./style.css"
 
 const Search = ({arr}) => {
-    const {setGoods} = useContext(Ctx);
-    const [text, setText] = useState("");
+    const {setGoods, text, setText} = useContext(Ctx);
     const [quantity, setQuantity] = useState(arr.length);
 
     const [count, updateCount] = useState(0);
