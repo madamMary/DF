@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Ctx from "./context";
+import Api from "./api";
 
 import { Header, Footer } from "./components/General";
 import Modal from "./components/Modal";
@@ -23,6 +24,7 @@ const App = () => {
     const [goods, setGoods] = useState(serverGoods);
 
     const [news, setNews] = useState([]);
+    const [api, setApi] = useState(new Api(token));
     useEffect(() => {
         fetch("https://newsapi.org/v2/everything?q=животные&sources=lenta&apiKey=f049fb2d4114429e8653af2ba889a319")
             .then(res => res.json())
@@ -48,6 +50,13 @@ const App = () => {
                 })
         }
     }, [token])
+
+    useEffect(() => {
+        if (api.token) {
+            api.getProduct()
+                
+        }
+    }, [api.token])
 
     useEffect(() => {
         if (!goods.length) {
@@ -91,7 +100,7 @@ const App = () => {
                     <Route path="/catalog" element={<Catalog
                         setServerGoods={setServerGoods}
                     />} />
-                    <Route path="/add" element={<Add/>}/>
+                    <Route path="/add" element={<Add />} />
                     <Route path="/draft" element={<Draft />} />
                     <Route path="/profile" element={
                         <Profile user={user} setUser={setUser} color="yellow"
