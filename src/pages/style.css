@@ -1,0 +1,230 @@
+.container {
+  margin-left: 50px;
+}
+
+.banner {
+  background-color: rgb(239, 218, 28);
+  padding-left: 150px;
+  padding-bottom: 100px;
+}
+
+.text__banner {
+  color: black;
+  width: 300px;
+  margin-bottom: 30px;
+  padding-left: 50px;
+}
+
+.text__banner p {
+  line-height: 25px;
+}
+
+.btn__banner {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0 25px;
+  margin: 0 15px 15px 0;
+  outline: none;
+  border: 1px solid #fff;
+  border-radius: 50px;
+  height: 46px;
+  line-height: 46px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #444;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgb(65 132 144 / 10%), 0 1px 3px rgb(0 0 0 / 8%);
+  cursor: pointer;
+  user-select: none;
+  appearance: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  transition: box-shadow 0.2s;
+}
+
+.advertising {
+  display: flex;
+  width: 100%;
+  position: relative;
+  justify-content: center;
+  top: -50px;
+}
+
+.boxes {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.boxes12 {
+  margin-left: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 20px;
+}
+
+.advertising img {
+  margin-left: 50px;
+  border-radius: 15px;
+}
+
+.white__body {
+  background-color: white;
+  min-width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.img2 {
+  background: url("https://img.freepik.com/free-psd/organic-pet-food-banner-template_23-2148457504.jpg")
+    no-repeat;
+  height: 350px;
+  background-size: contain;
+  background-position: center;
+}
+
+.img1 {
+  background: url("https://img.freepik.com/free-psd/organic-pet-food-banner-template_23-2148457504.jpg")
+    no-repeat;
+  height: 350px;
+  background-size: contain;
+  background-position: center;
+}
+
+.parent {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.description {
+  color: black;
+}
+
+.minus {
+  height: 20px;
+  cursor: pointer;
+  width: 15px;
+  float: left;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: -0.01em;
+  margin-left: 7px;
+}
+
+.plus {
+  height: 20px;
+  cursor: pointer;
+  width: 15px;
+  float: right;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: -0.01em;
+}
+
+.inp_price {
+  height: 20px;
+  width: 40px;
+  text-align: center;
+  border: none;
+  margin: 5px;
+}
+
+.count_box {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  place-content: center;
+  height: 40px;
+  width: 100px;
+  border: 1px solid gray;
+  border-radius: 30px;
+  font-size: large;
+}
+
+.basket__ball {
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-bottom: 20px;
+}
+
+.basket {
+  border: none;
+  outline: none;
+  height: 40px;
+  background-color: rgb(239, 218, 28);
+  color: #222;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 200px;
+  margin: auto;
+  font-size: 20px;
+}
+
+.basket:hover {
+  background-color: #777;
+}
+
+.part1 {
+  display: grid;
+  grid-template-columns: auto auto;
+  width: max-content;
+}
+
+.part2 {
+  width: max-content;
+}
+
+.part3 {
+  color: rgb(241, 76, 16);
+  float: left;
+}
+
+.areas {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.area__img {
+  max-height: 500px;
+}
+
+.area__price {
+  display: grid;
+  grid-template-rows: auto auto auto auto auto;
+}
+
+.price__area {
+  font-size: 30px;
+}
+
+mark {
+  background-color: rgb(245, 243, 243) !important;
+  color: rgb(241, 76, 16);
+}
+
+.promo1 {
+  display: grid;
+  grid-template-columns: auto auto;
+  background-color: #fff;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+.pic {
+  font-size: xx-large;
+  padding: 20px;
+}
+
+.promo__text {
+  padding: 20px;
+}
+
+@media (max-width: 980px) {
+  header {
+    overflow: hidden;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}

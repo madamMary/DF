@@ -1,0 +1,77 @@
+.card {
+  padding: 20px;
+  display: grid;
+  gap: 10px;
+  background-color: #fff;
+  color: #222;
+  border-radius: 4px;
+  text-align: center;
+  position: relative;
+  align-content: space-between;
+}
+
+.card__img {
+  height: 100px;
+  justify-self: center;
+}
+
+.card__img2 {
+  height: 100px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.card__btn {
+  border: none;
+  outline: none;
+  height: 30px;
+  background-color: rgb(239, 218, 28);
+  color: #222;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 100px;
+  margin: auto;
+}
+
+.card__btn:hover {
+  background-color: #777;
+}
+
+.card__btn__closed {
+  border: none;
+  outline: none;
+  height: 30px;
+  background-color: rgb(239, 218, 28);
+  color: #222;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 150px;
+  margin: auto;
+}
+
+.card__btn__closed:hover {
+  background-color: #777;
+}
+
+.card__discount {
+  position: absolute;
+  top: 20px;
+  left: 60px;
+  background-color: rgb(241, 76, 16);
+  padding: 4px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.card__like {
+  color: rgb(241, 76, 16);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 20px 60px;
+  cursor: pointer;
+}
